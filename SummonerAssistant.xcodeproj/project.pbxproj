@@ -25,7 +25,18 @@
 		59998DD020B5296F001CE878 /* SummonerDetailWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC220B5296F001CE878 /* SummonerDetailWireFrameTests.swift */; };
 		59998DD120B5296F001CE878 /* SummonerDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC420B5296F001CE878 /* SummonerDetailViewTests.swift */; };
 		59998DD220B5296F001CE878 /* SummonerDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC620B5296F001CE878 /* SummonerDetailInteractorTests.swift */; };
+		59998DDA20B52AEF001CE878 /* SummonerAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DD920B52AEF001CE878 /* SummonerAssistantTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59998DDC20B52AEF001CE878 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59998D8520B46226001CE878 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59998D8C20B46226001CE878;
+			remoteInfo = SummonerAssistant;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		59998D8D20B46226001CE878 /* SummonerAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummonerAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +58,9 @@
 		59998DC220B5296F001CE878 /* SummonerDetailWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailWireFrameTests.swift; sourceTree = "<group>"; };
 		59998DC420B5296F001CE878 /* SummonerDetailViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailViewTests.swift; sourceTree = "<group>"; };
 		59998DC620B5296F001CE878 /* SummonerDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailInteractorTests.swift; sourceTree = "<group>"; };
+		59998DD720B52AEF001CE878 /* SummonerAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummonerAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59998DD920B52AEF001CE878 /* SummonerAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerAssistantTests.swift; sourceTree = "<group>"; };
+		59998DDB20B52AEF001CE878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BE1457A6BDD56730BDF05AB /* Pods-SummonerAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		B21D2741BD88CFF4CE0D1C4A /* Pods_SummonerAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummonerAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5349624BBF9C5ACC1C67892 /* Pods-SummonerAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +72,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				226EF8C83226B70FAEFBC1D2 /* Pods_SummonerAssistant.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59998DD420B52AEF001CE878 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				59998D8F20B46226001CE878 /* SummonerAssistant */,
+				59998DD820B52AEF001CE878 /* SummonerAssistantTests */,
 				59998D8E20B46226001CE878 /* Products */,
 				55E7DC54AC506C9A2116A6A0 /* Pods */,
 				2B492936C074D5B0950B0855 /* Frameworks */,
@@ -95,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				59998D8D20B46226001CE878 /* SummonerAssistant.app */,
+				59998DD720B52AEF001CE878 /* SummonerAssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				59998DAA20B5296F001CE878 /* SummonerDetail */,
-				59998DBD20B5296F001CE878 /* Tests */,
 				59998D9020B46226001CE878 /* AppDelegate.swift */,
 				59998D9220B46226001CE878 /* ViewController.swift */,
 				59998D9420B46226001CE878 /* Main.storyboard */,
@@ -209,14 +231,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		59998DBD20B5296F001CE878 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				59998DBE20B5296F001CE878 /* SummonerDetail */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		59998DBE20B5296F001CE878 /* SummonerDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +274,16 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		59998DD820B52AEF001CE878 /* SummonerAssistantTests */ = {
+			isa = PBXGroup;
+			children = (
+				59998DBE20B5296F001CE878 /* SummonerDetail */,
+				59998DD920B52AEF001CE878 /* SummonerAssistantTests.swift */,
+				59998DDB20B52AEF001CE878 /* Info.plist */,
+			);
+			path = SummonerAssistantTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +306,24 @@
 			productReference = 59998D8D20B46226001CE878 /* SummonerAssistant.app */;
 			productType = "com.apple.product-type.application";
 		};
+		59998DD620B52AEF001CE878 /* SummonerAssistantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59998DDE20B52AEF001CE878 /* Build configuration list for PBXNativeTarget "SummonerAssistantTests" */;
+			buildPhases = (
+				59998DD320B52AEF001CE878 /* Sources */,
+				59998DD420B52AEF001CE878 /* Frameworks */,
+				59998DD520B52AEF001CE878 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59998DDD20B52AEF001CE878 /* PBXTargetDependency */,
+			);
+			name = SummonerAssistantTests;
+			productName = SummonerAssistantTests;
+			productReference = 59998DD720B52AEF001CE878 /* SummonerAssistantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -294,6 +336,10 @@
 				TargetAttributes = {
 					59998D8C20B46226001CE878 = {
 						CreatedOnToolsVersion = 9.3.1;
+					};
+					59998DD620B52AEF001CE878 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 59998D8C20B46226001CE878;
 					};
 				};
 			};
@@ -311,6 +357,7 @@
 			projectRoot = "";
 			targets = (
 				59998D8C20B46226001CE878 /* SummonerAssistant */,
+				59998DD620B52AEF001CE878 /* SummonerAssistantTests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +370,13 @@
 				59998D9B20B46227001CE878 /* LaunchScreen.storyboard in Resources */,
 				59998D9820B46227001CE878 /* Assets.xcassets in Resources */,
 				59998D9620B46226001CE878 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59998DD520B52AEF001CE878 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +445,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59998DD320B52AEF001CE878 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59998DDA20B52AEF001CE878 /* SummonerAssistantTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59998DDD20B52AEF001CE878 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59998D8C20B46226001CE878 /* SummonerAssistant */;
+			targetProxy = 59998DDC20B52AEF001CE878 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		59998D9420B46226001CE878 /* Main.storyboard */ = {
@@ -565,6 +635,46 @@
 			};
 			name = Release;
 		};
+		59998DDF20B52AEF001CE878 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QW8H3B548;
+				INFOPLIST_FILE = SummonerAssistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.asierzapata.SummonerAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SummonerAssistant.app/SummonerAssistant";
+			};
+			name = Debug;
+		};
+		59998DE020B52AEF001CE878 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QW8H3B548;
+				INFOPLIST_FILE = SummonerAssistantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.asierzapata.SummonerAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SummonerAssistant.app/SummonerAssistant";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -582,6 +692,15 @@
 			buildConfigurations = (
 				59998DA020B46228001CE878 /* Debug */,
 				59998DA120B46228001CE878 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59998DDE20B52AEF001CE878 /* Build configuration list for PBXNativeTarget "SummonerAssistantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59998DDF20B52AEF001CE878 /* Debug */,
+				59998DE020B52AEF001CE878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
