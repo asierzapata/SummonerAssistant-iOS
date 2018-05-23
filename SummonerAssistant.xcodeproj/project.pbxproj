@@ -13,6 +13,18 @@
 		59998D9620B46226001CE878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9420B46226001CE878 /* Main.storyboard */; };
 		59998D9820B46227001CE878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9720B46227001CE878 /* Assets.xcassets */; };
 		59998D9B20B46227001CE878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9920B46227001CE878 /* LaunchScreen.storyboard */; };
+		59998DC720B5296F001CE878 /* SummonerDetailLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DAE20B5296F001CE878 /* SummonerDetailLocalDataManager.swift */; };
+		59998DC820B5296F001CE878 /* SummonerDetailAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DB020B5296F001CE878 /* SummonerDetailAPIDataManager.swift */; };
+		59998DC920B5296F001CE878 /* SummonerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DB220B5296F001CE878 /* SummonerDetailInteractor.swift */; };
+		59998DCA20B5296F001CE878 /* SummonerDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DB320B5296F001CE878 /* SummonerDetailItem.swift */; };
+		59998DCB20B5296F001CE878 /* SummonerDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DB520B5296F001CE878 /* SummonerDetailProtocols.swift */; };
+		59998DCC20B5296F001CE878 /* SummonerDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DB820B5296F001CE878 /* SummonerDetailPresenter.swift */; };
+		59998DCD20B5296F001CE878 /* SummonerDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DBA20B5296F001CE878 /* SummonerDetailWireFrame.swift */; };
+		59998DCE20B5296F001CE878 /* SummonerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DBC20B5296F001CE878 /* SummonerDetailView.swift */; };
+		59998DCF20B5296F001CE878 /* SummonerDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC020B5296F001CE878 /* SummonerDetailPresenterTests.swift */; };
+		59998DD020B5296F001CE878 /* SummonerDetailWireFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC220B5296F001CE878 /* SummonerDetailWireFrameTests.swift */; };
+		59998DD120B5296F001CE878 /* SummonerDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC420B5296F001CE878 /* SummonerDetailViewTests.swift */; };
+		59998DD220B5296F001CE878 /* SummonerDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59998DC620B5296F001CE878 /* SummonerDetailInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +35,18 @@
 		59998D9720B46227001CE878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59998D9A20B46227001CE878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59998D9C20B46227001CE878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59998DAE20B5296F001CE878 /* SummonerDetailLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailLocalDataManager.swift; sourceTree = "<group>"; };
+		59998DB020B5296F001CE878 /* SummonerDetailAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailAPIDataManager.swift; sourceTree = "<group>"; };
+		59998DB220B5296F001CE878 /* SummonerDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailInteractor.swift; sourceTree = "<group>"; };
+		59998DB320B5296F001CE878 /* SummonerDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailItem.swift; sourceTree = "<group>"; };
+		59998DB520B5296F001CE878 /* SummonerDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailProtocols.swift; sourceTree = "<group>"; };
+		59998DB820B5296F001CE878 /* SummonerDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailPresenter.swift; sourceTree = "<group>"; };
+		59998DBA20B5296F001CE878 /* SummonerDetailWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailWireFrame.swift; sourceTree = "<group>"; };
+		59998DBC20B5296F001CE878 /* SummonerDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailView.swift; sourceTree = "<group>"; };
+		59998DC020B5296F001CE878 /* SummonerDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailPresenterTests.swift; sourceTree = "<group>"; };
+		59998DC220B5296F001CE878 /* SummonerDetailWireFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailWireFrameTests.swift; sourceTree = "<group>"; };
+		59998DC420B5296F001CE878 /* SummonerDetailViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailViewTests.swift; sourceTree = "<group>"; };
+		59998DC620B5296F001CE878 /* SummonerDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDetailInteractorTests.swift; sourceTree = "<group>"; };
 		8BE1457A6BDD56730BDF05AB /* Pods-SummonerAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		B21D2741BD88CFF4CE0D1C4A /* Pods_SummonerAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummonerAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5349624BBF9C5ACC1C67892 /* Pods-SummonerAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +102,8 @@
 		59998D8F20B46226001CE878 /* SummonerAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				59998DAA20B5296F001CE878 /* SummonerDetail */,
+				59998DBD20B5296F001CE878 /* Tests */,
 				59998D9020B46226001CE878 /* AppDelegate.swift */,
 				59998D9220B46226001CE878 /* ViewController.swift */,
 				59998D9420B46226001CE878 /* Main.storyboard */,
@@ -86,6 +112,152 @@
 				59998D9C20B46227001CE878 /* Info.plist */,
 			);
 			path = SummonerAssistant;
+			sourceTree = "<group>";
+		};
+		59998DAA20B5296F001CE878 /* SummonerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				59998DAB20B5296F001CE878 /* Application Logic */,
+				59998DB420B5296F001CE878 /* Protocols */,
+				59998DB620B5296F001CE878 /* User Interface */,
+			);
+			path = SummonerDetail;
+			sourceTree = "<group>";
+		};
+		59998DAB20B5296F001CE878 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				59998DAC20B5296F001CE878 /* DataManager */,
+				59998DB120B5296F001CE878 /* Interactor */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		59998DAC20B5296F001CE878 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				59998DAD20B5296F001CE878 /* Local */,
+				59998DAF20B5296F001CE878 /* API */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		59998DAD20B5296F001CE878 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				59998DAE20B5296F001CE878 /* SummonerDetailLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		59998DAF20B5296F001CE878 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				59998DB020B5296F001CE878 /* SummonerDetailAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		59998DB120B5296F001CE878 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				59998DB220B5296F001CE878 /* SummonerDetailInteractor.swift */,
+				59998DB320B5296F001CE878 /* SummonerDetailItem.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		59998DB420B5296F001CE878 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				59998DB520B5296F001CE878 /* SummonerDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		59998DB620B5296F001CE878 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				59998DB720B5296F001CE878 /* Presenter */,
+				59998DB920B5296F001CE878 /* WireFrame */,
+				59998DBB20B5296F001CE878 /* View */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		59998DB720B5296F001CE878 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				59998DB820B5296F001CE878 /* SummonerDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		59998DB920B5296F001CE878 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				59998DBA20B5296F001CE878 /* SummonerDetailWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		59998DBB20B5296F001CE878 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59998DBC20B5296F001CE878 /* SummonerDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59998DBD20B5296F001CE878 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				59998DBE20B5296F001CE878 /* SummonerDetail */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		59998DBE20B5296F001CE878 /* SummonerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				59998DBF20B5296F001CE878 /* Presenter */,
+				59998DC120B5296F001CE878 /* WireFrame */,
+				59998DC320B5296F001CE878 /* View */,
+				59998DC520B5296F001CE878 /* Interactor */,
+			);
+			path = SummonerDetail;
+			sourceTree = "<group>";
+		};
+		59998DBF20B5296F001CE878 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				59998DC020B5296F001CE878 /* SummonerDetailPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		59998DC120B5296F001CE878 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				59998DC220B5296F001CE878 /* SummonerDetailWireFrameTests.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		59998DC320B5296F001CE878 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59998DC420B5296F001CE878 /* SummonerDetailViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59998DC520B5296F001CE878 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				59998DC620B5296F001CE878 /* SummonerDetailInteractorTests.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +354,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -202,8 +374,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59998DCB20B5296F001CE878 /* SummonerDetailProtocols.swift in Sources */,
+				59998DCC20B5296F001CE878 /* SummonerDetailPresenter.swift in Sources */,
+				59998DD120B5296F001CE878 /* SummonerDetailViewTests.swift in Sources */,
+				59998DC720B5296F001CE878 /* SummonerDetailLocalDataManager.swift in Sources */,
+				59998DCF20B5296F001CE878 /* SummonerDetailPresenterTests.swift in Sources */,
+				59998DCE20B5296F001CE878 /* SummonerDetailView.swift in Sources */,
+				59998DC820B5296F001CE878 /* SummonerDetailAPIDataManager.swift in Sources */,
+				59998DD220B5296F001CE878 /* SummonerDetailInteractorTests.swift in Sources */,
+				59998DC920B5296F001CE878 /* SummonerDetailInteractor.swift in Sources */,
 				59998D9320B46226001CE878 /* ViewController.swift in Sources */,
+				59998DCD20B5296F001CE878 /* SummonerDetailWireFrame.swift in Sources */,
 				59998D9120B46226001CE878 /* AppDelegate.swift in Sources */,
+				59998DCA20B5296F001CE878 /* SummonerDetailItem.swift in Sources */,
+				59998DD020B5296F001CE878 /* SummonerDetailWireFrameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
