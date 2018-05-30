@@ -9,7 +9,8 @@
 import UIKit
 
 protocol MainInteractorInput {
-    func fetchTopChampionsSummoner(request: MainModel.Fetch.Request)
+    func fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions)
+    func fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo)
 }
 
 class MainInteractor: MainInteractorInput {
@@ -17,13 +18,21 @@ class MainInteractor: MainInteractorInput {
     var presenter: MainPresenterInput!
     var worker: MainWorker!
     
-    func fetchTopChampionsSummoner(request: MainModel.Fetch.Request) {
-        worker = MainWorker()
-        worker.fetch(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
-            self.presenter.presentFetchResults(response: data)
+    func fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions) {
+        worker.fetchMostFrequentChampions(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
+            self.presenter.presentFetchMostUsedChampions(response: data)
         }) { (data) in
             // It seems redundant. Check architecture
-            self.presenter.presentFetchResults(response: data)
+            self.presenter.presentFetchMostUsedChampions(response: data)
+        }
+    }
+    
+    func fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo) {
+        worker.fetchSummonerInfo(summonerName: request.summonerName, region: request.region, success: { (data) in
+            self.presenter.presentFetchSummonerInfo(response: data)
+        }) { (data) in
+            // It seems redundant. Check architecture
+            self.presenter.presentFetchSummonerInfo(response: data)
         }
     }
     

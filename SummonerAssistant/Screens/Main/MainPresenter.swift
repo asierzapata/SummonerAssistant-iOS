@@ -9,22 +9,37 @@
 import UIKit
 
 protocol MainPresenterInput {
-    func presentFetchResults(response: MainModel.Fetch.Response)
+    func presentFetchMostUsedChampions(response: MainModel.Fetch.Response)
+    func presentFetchSummonerInfo(response: MainModel.Fetch.Response)
 }
 
 class MainPresenter: MainPresenterInput {
     var viewController: MainViewControllerInput!
     
-    func presentFetchResults(response: MainModel.Fetch.Response) {
-        let viewModel = MainModel.Fetch.ViewModel(topUsedChampions: response.data, isError: response.isError, message: response.message)
-        
-        if viewModel.isError {
+    func presentFetchMostUsedChampions(response: MainModel.Fetch.Response) {
+        if response.isError {
             if let viewController = self.viewController {
-                viewController.errorFetchingItems(viewModel: viewModel)
+                viewController.errorFetchingItems(error: AppError(message: response.message!))
             }
         } else {
+            let viewModel = MainModel.Fetch.ViewModel.MostUsedChampions(topUsedChampions: response.data as! Array<ChampionsStatisticsModel>, isError: response.isError, message: response.message)
+            
             if let viewController = self.viewController {
-                viewController.successFetchedItems(viewModel: viewModel)
+                viewController.successFetchMostUsedChampions(viewModel: viewModel)
+            }
+        }
+    }
+    
+    func presentFetchSummonerInfo(response: MainModel.Fetch.Response) {
+        if response.isError {
+            if let viewController = self.viewController {
+                viewController.errorFetchingItems(error: AppError(message: response.message!))
+            }
+        } else {
+            let viewModel = MainModel.Fetch.ViewModel.SummonerInfoView(info: response.data as! SummonerInfo, isError: response.isError, message: response.message)
+
+            if let viewController = self.viewController {
+                viewController.successSummonerInfo(viewModel: viewModel)
             }
         }
     }

@@ -12,15 +12,23 @@ import UIKit
 struct ChampionsStatisticsModel: Codable{
     var name: String
     var thumbnailUrl: String?
-    struct cs {
-        var average: Int
-        var perMin: Int
-    }
-    struct KDA {
-        var kill: Int
-        var death: Int
-        var assist: Int
-    }
+    var csAverage: Int
+    var csPerMin: Int
+    var kill: Int
+    var death: Int
+    var assist: Int
     var winrate: String
     var gamesPlayer: String
+    
+//    init(dictionary: [String: Any]) {
+//        self.name = dictionary["name"] as! String
+//        self.thumbnailUrl = dictionary["thumbnailUrl"] as? String
+//        self.csAverage = dictionary["cs"]!["average"] as! Int
+//        self.csPerMin = dictionary["cs"]!["perMin"] as! Int
+//        self.kill = dictionary["KDA"]["kill"] as! Int
+//        self.death = dictionary["KDA"]["death"] as! Int
+//        self.assist = dictionary["KDA"]["assist"] as! Int
+//        self.winrate = dictionary["winrate"] as! String
+//        self.gamesPlayer = dictionary["gamesPlayer"] as! String
+//    }
 }

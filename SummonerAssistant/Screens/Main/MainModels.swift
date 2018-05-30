@@ -13,19 +13,32 @@ import UIKit
 struct MainModel{
     struct Fetch {
         struct Request{
-            var summonerName: String
-            var region: String
-            var season: String
+            struct MostUsedChampions {
+                var summonerName: String
+                var region: String
+                var season: String
+            }
+            struct SummonerInfo {
+                var summonerName: String
+                var region: String
+            }
         }
         struct Response{
             var message: String?
             var isError: Bool
-            var data: Array<ChampionsStatisticsModel>
+            var data: Any
         }
         struct ViewModel{
-            var topUsedChampions: Array<ChampionsStatisticsModel>
-            var isError: Bool
-            var message: String?
+            struct MostUsedChampions {
+                var topUsedChampions: Array<ChampionsStatisticsModel>
+                var isError: Bool
+                var message: String?
+            }
+            struct SummonerInfoView {
+                var info: SummonerInfo
+                var isError: Bool
+                var message: String?
+            }
         }
     }
 }

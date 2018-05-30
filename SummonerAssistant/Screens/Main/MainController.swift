@@ -9,8 +9,9 @@
 import UIKit
 
 protocol MainViewControllerInput: class {
-    func successFetchedItems(viewModel: MainModel.Fetch.ViewModel)
-    func errorFetchingItems(viewModel: MainModel.Fetch.ViewModel)
+    func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions)
+    func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView)
+    func errorFetchingItems(error: AppError)
 }
 
 class MainViewController: UIViewController, MainViewControllerInput {
@@ -20,12 +21,13 @@ class MainViewController: UIViewController, MainViewControllerInput {
     
     // Labels
     @IBOutlet weak var SummonerNameLabel: UILabel!
-    @IBOutlet weak var SummonerRegionLabel: UILabel!
+    @IBOutlet weak var SummonerLevelLabel: UILabel!
     
     // Images
     @IBOutlet weak var FirstUsedChampionImage: UIImageView!
     @IBOutlet weak var SecondUsedChampionImage: UIImageView!
     @IBOutlet weak var ThirdUsedChampionImage: UIImageView!
+    @IBOutlet weak var SummonerAvatar: UIImageView!
     
     var UsedChampionsImages: Array<UIImageView>!
     
@@ -44,19 +46,16 @@ class MainViewController: UIViewController, MainViewControllerInput {
     private func setup() {
         let viewController = self
         let interactor = MainInteractor()
+        let worker = MainWorker()
         let presenter = MainPresenter()
         let router = MainRouter()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.worker = worker
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
-        UsedChampionsImages = [
-                FirstUsedChampionImage,
-                SecondUsedChampionImage,
-                ThirdUsedChampionImage
-        ]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,19 +64,43 @@ class MainViewController: UIViewController, MainViewControllerInput {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        interactor.fetchTopChampionsSummoner(request: MainModel.Fetch.Request(summonerName: "20361724", region: "euw", season: "7"))
+        UsedChampionsImages = [
+            FirstUsedChampionImage,
+            SecondUsedChampionImage,
+            ThirdUsedChampionImage
+        ]
+        //interactor.fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions(summonerName: "20361724", region: "euw", season: "7"))
+        interactor.fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo(summonerName: "DogeCarry", region: "euw"))
     }
     
-    func successFetchedItems(viewModel: MainModel.Fetch.ViewModel) {
+    func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
         print(viewModel.topUsedChampions)
         for n in 1...3 {
             let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl!)
             let data = try? Data(contentsOf: url!)
             UsedChampionsImages[n].image = UIImage(data: data!)
+            roundImageView(image: UsedChampionsImages[n])
         }
     }
     
-    func errorFetchingItems(viewModel: MainModel.Fetch.ViewModel) {
-        print(viewModel.message ?? "error fetching items")
+    func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView) {
+        print(viewModel.info)
+        let url = URL(string: viewModel.info.profileIconThumbnail)
+        let data = try? Data(contentsOf: url!)
+        
+        SummonerNameLabel.text = viewModel.info.name
+        SummonerLevelLabel.text = String(viewModel.info.summonerLevel)
+        SummonerAvatar.image = UIImage(data: data!)
+        roundImageView(image: SummonerAvatar)
     }
+    
+    func roundImageView(image: UIImageView){
+        image.layer.cornerRadius = image.frame.size.width / 2;
+        image.clipsToBounds = true;
+    }
+    
+    func errorFetchingItems(error: AppError) {
+        print(error.message)
+    }
+    
 }
