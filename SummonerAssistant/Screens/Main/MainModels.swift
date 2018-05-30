@@ -39,6 +39,11 @@ struct MainModel{
                 var isError: Bool
                 var message: String?
             }
+            struct MatchInfoView {
+                var champion: String
+                var KDA: String
+                var cs: String
+            }
         }
     }
 }

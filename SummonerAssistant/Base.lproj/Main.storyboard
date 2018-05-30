@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pv4-qc-PpA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pv4-qc-PpA" userLabel="TopBar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FW7-oX-6FS">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FW7-oX-6FS" userLabel="Summoner Info">
                                         <rect key="frame" x="8" y="28" width="204" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -33,21 +33,21 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-bS-s04" userLabel="Summoner Avatar">
+                                                <rect key="frame" x="102" y="0.0" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIq-v9-rtJ" userLabel="Summoner Level Label">
-                                                <rect key="frame" x="165" y="11" width="29" height="21"/>
+                                                <rect key="frame" x="157" y="11" width="29" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-bS-s04" userLabel="Summoner Avatar">
-                                                <rect key="frame" x="102" y="0.0" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2156862745" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JxO-5U-jND">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JxO-5U-jND" userLabel="Summoner Champions">
                                         <rect key="frame" x="215" y="28" width="149" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -68,13 +68,129 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.40784313725490196" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="U0e-uZ-Oem"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEH-7E-F5x" userLabel="Main">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfH-eV-2g4" userLabel="Champion Select">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-TD-OA9" userLabel="Floating View" customClass="RoundUIView" customModule="SummonerAssistant" customModuleProvider="target">
+                                                <rect key="frame" x="62" y="12.5" width="250" height="122.5"/>
+                                                <color key="backgroundColor" red="0.50980392156862742" green="0.41960784313725491" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.54901960780000003" green="0.81568627449999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="cfB-TD-OA9" firstAttribute="centerX" secondItem="pfH-eV-2g4" secondAttribute="centerX" id="F6s-GK-F2o"/>
+                                            <constraint firstItem="cfB-TD-OA9" firstAttribute="height" secondItem="pfH-eV-2g4" secondAttribute="height" multiplier="1:1.2" id="Gqr-ww-GTV"/>
+                                            <constraint firstItem="cfB-TD-OA9" firstAttribute="width" secondItem="pfH-eV-2g4" secondAttribute="width" multiplier="1:1.5" id="OOy-71-12j"/>
+                                            <constraint firstItem="cfB-TD-OA9" firstAttribute="centerY" secondItem="pfH-eV-2g4" secondAttribute="centerY" id="YIT-PZ-AxE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-JH-Xc1" userLabel="Match History">
+                                        <rect key="frame" x="0.0" y="147" width="375" height="440"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-vB-VvU">
+                                                <rect key="frame" x="8" y="8" width="359" height="424"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <view key="tableHeaderView" contentMode="scaleToFill" id="dGx-DU-nM9" userLabel="Title">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Match History" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4a-mn-Lle">
+                                                            <rect key="frame" x="19" y="12" width="120" height="23"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.50980392156862742" green="0.41960784313725491" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="Oq2-0g-Gj3" customClass="CustomTableViewCell" customModule="SummonerAssistant" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="72" width="359" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oq2-0g-Gj3" id="Uxb-nD-rWb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb8-ea-g0Z">
+                                                                    <rect key="frame" x="159" y="40" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-Uo-1eB">
+                                                                    <rect key="frame" x="160" y="30" width="40" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="eR8-yD-72R"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="rXY-P0-1ay"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Qb8-ea-g0Z" firstAttribute="centerX" secondItem="Uxb-nD-rWb" secondAttribute="centerX" id="0Ha-7p-2TN"/>
+                                                                <constraint firstItem="Qb8-ea-g0Z" firstAttribute="centerY" secondItem="GHc-Uo-1eB" secondAttribute="centerY" id="In6-f3-QjX"/>
+                                                                <constraint firstItem="Qb8-ea-g0Z" firstAttribute="centerX" secondItem="GHc-Uo-1eB" secondAttribute="centerX" id="l60-N1-YNL"/>
+                                                                <constraint firstItem="Qb8-ea-g0Z" firstAttribute="centerY" secondItem="Uxb-nD-rWb" secondAttribute="centerY" id="zjN-t3-7gN"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="ChampionAvatar" destination="GHc-Uo-1eB" id="9Ry-2S-pcp"/>
+                                                            <outlet property="KDA" destination="Qb8-ea-g0Z" id="Ng1-mv-tXr"/>
+                                                            <outlet property="MatchBackground" destination="Uxb-nD-rWb" id="KlX-li-ajD"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="s8c-54-EZg"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FwL-oW-MRu"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.54901960780000003" green="0.81568627449999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.5490196078431373" green="0.81568627450980391" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZRR-JH-Xc1" firstAttribute="top" secondItem="pfH-eV-2g4" secondAttribute="bottom" id="8lY-up-WO9"/>
+                                    <constraint firstItem="pfH-eV-2g4" firstAttribute="leading" secondItem="qEH-7E-F5x" secondAttribute="leading" id="AUF-bA-wK8"/>
+                                    <constraint firstItem="pfH-eV-2g4" firstAttribute="height" secondItem="ZRR-JH-Xc1" secondAttribute="height" multiplier="1:3" id="W1l-XP-2Yp"/>
+                                    <constraint firstAttribute="trailing" secondItem="pfH-eV-2g4" secondAttribute="trailing" id="WVJ-jZ-DOI"/>
+                                    <constraint firstItem="ZRR-JH-Xc1" firstAttribute="top" secondItem="pfH-eV-2g4" secondAttribute="bottom" id="X5V-zK-LmZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZRR-JH-Xc1" secondAttribute="bottom" id="XxZ-50-IVw"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZRR-JH-Xc1" secondAttribute="trailing" id="Z1k-vW-Zyj"/>
+                                    <constraint firstItem="pfH-eV-2g4" firstAttribute="top" secondItem="qEH-7E-F5x" secondAttribute="top" id="kKL-aH-AAy"/>
+                                    <constraint firstItem="ZRR-JH-Xc1" firstAttribute="leading" secondItem="qEH-7E-F5x" secondAttribute="leading" id="rfr-38-jXB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.5490196078431373" green="0.81568627450980391" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qEH-7E-F5x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FGd-jP-rIX"/>
+                            <constraint firstItem="Pv4-qc-PpA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L9v-S6-Y9f"/>
+                            <constraint firstItem="qEH-7E-F5x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UFs-fM-2k4"/>
+                            <constraint firstItem="qEH-7E-F5x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="glj-5N-oCC"/>
+                            <constraint firstItem="Pv4-qc-PpA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hF6-hY-WcE"/>
+                            <constraint firstItem="Pv4-qc-PpA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rPh-p0-c3r"/>
+                            <constraint firstItem="qEH-7E-F5x" firstAttribute="top" secondItem="Pv4-qc-PpA" secondAttribute="bottom" id="xQr-Wa-79I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="FirstUsedChampionImage" destination="H9h-lR-mQL" id="Kuy-nm-kwv"/>
+                        <outlet property="MatchHistoryList" destination="2Zp-vB-VvU" id="g9Q-6y-shc"/>
                         <outlet property="SecondUsedChampionImage" destination="NDu-j3-GAS" id="pzc-Zm-QAs"/>
                         <outlet property="SummonerAvatar" destination="TCP-bS-s04" id="X4l-qn-kHO"/>
                         <outlet property="SummonerLevelLabel" destination="hIq-v9-rtJ" id="uKI-DR-JDx"/>

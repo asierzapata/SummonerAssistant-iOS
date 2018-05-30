@@ -14,10 +14,12 @@ protocol MainViewControllerInput: class {
     func errorFetchingItems(error: AppError)
 }
 
-class MainViewController: UIViewController, MainViewControllerInput {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MainViewControllerInput {
     
     var interactor: MainInteractor!
     var router: MainRouter!
+    
+    var matchList = ["win", "lost"]
     
     // Labels
     @IBOutlet weak var SummonerNameLabel: UILabel!
@@ -30,6 +32,10 @@ class MainViewController: UIViewController, MainViewControllerInput {
     @IBOutlet weak var SummonerAvatar: UIImageView!
     
     var UsedChampionsImages: Array<UIImageView>!
+    
+    // Lists
+    @IBOutlet weak var MatchHistoryList: UITableView!
+    
     
     // MARK: - Object lifecycle
     
@@ -103,4 +109,23 @@ class MainViewController: UIViewController, MainViewControllerInput {
         print(error.message)
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return matchList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        //let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        cell.KDA.text = "4/0/3";
+        cell.MatchContainer.backgroundColor = (matchList[indexPath.row] == "win" ? UIColor.green : UIColor.red)
+        return cell
+    }
+    
+//    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//    }
 }
