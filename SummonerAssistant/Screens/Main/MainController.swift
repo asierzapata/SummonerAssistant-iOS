@@ -109,6 +109,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(error.message)
     }
     
+    // MARK: - UITableView Delegate Methods
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -123,6 +125,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.KDA.text = "4/0/3";
         cell.MatchContainer.backgroundColor = (matchList[indexPath.row] == "win" ? UIColor.green : UIColor.red)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 //    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

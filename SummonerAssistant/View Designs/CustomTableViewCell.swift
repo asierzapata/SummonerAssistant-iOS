@@ -12,8 +12,9 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var KDA: UILabel!
     @IBOutlet weak var ChampionAvatar: UIImageView!
-    @IBOutlet weak var CS: UILabel!
     @IBOutlet weak var MatchContainer: RoundUIView!
+    @IBOutlet weak var TimeDuration: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
