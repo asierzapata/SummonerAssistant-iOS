@@ -75,14 +75,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             SecondUsedChampionImage,
             ThirdUsedChampionImage
         ]
-        //interactor.fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions(summonerName: "20361724", region: "euw", season: "7"))
+        interactor.fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions(summonerName: "20361724", region: "euw", season: "7"))
         interactor.fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo(summonerName: "DogeCarry", region: "euw"))
     }
     
     func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
         print(viewModel.topUsedChampions)
         for n in 1...3 {
-            let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl!)
+            let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl)
             let data = try? Data(contentsOf: url!)
             UsedChampionsImages[n].image = UIImage(data: data!)
             roundImageView(image: UsedChampionsImages[n])
@@ -128,7 +128,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
     
 //    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

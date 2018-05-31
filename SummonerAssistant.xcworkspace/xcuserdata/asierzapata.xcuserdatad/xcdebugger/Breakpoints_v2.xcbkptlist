@@ -9,29 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "549364909.6361851"
+            filePath = "SummonerAssistant/Models/SummonerInfo.swift"
+            timestampString = "549386236.2710021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "MainWorker"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "549364909.636571"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchMostFrequentChampions(summonerName:region:season:success:fail:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "549364909.636827"
+            filePath = "SummonerAssistant/Models/SummonerInfo.swift"
+            timestampString = "549386236.271106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "fetchMostFrequentChampions(summonerName:region:season:success:fail:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummonerAssistant/Models/SummonerInfo.swift"
+            timestampString = "549386236.271149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummonerAssistant/Models/SummonerInfo.swift"
+            timestampString = "549386236.271191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(dictionary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummonerAssistant/Models/SummonerInfo.swift"
+            timestampString = "549386236.271245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +90,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "549364909.637064"
+            timestampString = "549473751.590676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchMostFrequentChampions(summonerName:region:season:success:fail:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.HTTPSCallableResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SummonerAssistant.MainWorker.fetchMostFrequentChampions(summonerName: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, region: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, season: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, success: (SummonerAssistant.MainModel.Fetch.Response) -&gt; (), fail: (SummonerAssistant.MainModel.Fetch.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "SummonerAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/Main/MainWorker.swift"
+                  timestampString = "549473751.604049"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "697">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.HTTPSCallableResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SummonerAssistant.MainWorker.fetchMostFrequentChampions(summonerName: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, region: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, season: Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, success: (SummonerAssistant.MainModel.Fetch.Response) -&gt; (), fail: (SummonerAssistant.MainModel.Fetch.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "SummonerAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/Main/MainWorker.swift"
+                  timestampString = "549473751.606679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1302">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
+            timestampString = "549473751.591758"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "fetchMostFrequentChampions(summonerName:region:season:success:fail:)"
             landmarkType = "7">
          </BreakpointContent>

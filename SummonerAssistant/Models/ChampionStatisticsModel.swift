@@ -11,24 +11,46 @@ import UIKit
 
 struct ChampionsStatisticsModel: Codable{
     var name: String
-    var thumbnailUrl: String?
-    var csAverage: Int
-    var csPerMin: Int
+    var thumbnailUrl: String
+    var cs: String
+    var gold: String
+    var averageDamageDealt: String
+    var averageDamageTaken: String
+    var maxKills: String
+    var maxDeaths: String
+    var doubleKill: String
+    var tripleKill: String
+    var quadraKill: String
+    var pentaKill: String
     var kill: Int
     var death: Int
     var assist: Int
     var winrate: String
-    var gamesPlayer: String
+    var gamesPlayed: String
+    var gamesWon: String
+    var gamesLost: String
     
-//    init(dictionary: [String: Any]) {
-//        self.name = dictionary["name"] as! String
-//        self.thumbnailUrl = dictionary["thumbnailUrl"] as? String
-//        self.csAverage = dictionary["cs"]!["average"] as! Int
-//        self.csPerMin = dictionary["cs"]!["perMin"] as! Int
-//        self.kill = dictionary["KDA"]["kill"] as! Int
-//        self.death = dictionary["KDA"]["death"] as! Int
-//        self.assist = dictionary["KDA"]["assist"] as! Int
-//        self.winrate = dictionary["winrate"] as! String
-//        self.gamesPlayer = dictionary["gamesPlayer"] as! String
-//    }
+    init(dictionary: [String: Any]) {
+        self.name = dictionary["name"] as! String
+        self.thumbnailUrl = dictionary["thumbnailUrl"] as! String
+        self.cs = dictionary["cs"] as! String
+        self.gold = dictionary["gold"] as! String
+        self.averageDamageDealt = dictionary["averageDamageDealt"] as! String
+        self.averageDamageTaken = dictionary["averageDamageTaken"] as! String
+        self.maxKills = dictionary["maxKills"] as! String
+        self.maxDeaths = dictionary["maxDeaths"] as! String
+        self.doubleKill = dictionary["doubleKill"] as! String
+        self.tripleKill = dictionary["tripleKill"] as! String
+        self.quadraKill = dictionary["quadraKill"] as! String
+        self.pentaKill = dictionary["pentaKill"] as! String
+        let KDA = dictionary["KDA"] as! Dictionary<String,AnyObject>
+        self.kill = KDA["kill"] as! Int
+        self.death = KDA["death"] as! Int
+        self.assist = KDA["assist"] as! Int
+        let games = dictionary["games"] as! Dictionary<String,AnyObject>
+        self.winrate = games["winrate"] as! String
+        self.gamesPlayed = games["played"] as! String
+        self.gamesWon = games["wins"] as! String
+        self.gamesLost = games["losses"] as! String
+    }
 }

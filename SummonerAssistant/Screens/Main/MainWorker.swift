@@ -21,7 +21,7 @@ class MainWorker {
 
     func fetchMostFrequentChampions(summonerName: String!, region: String!, season: String!, success:@escaping(responseHandler), fail:@escaping(responseHandler)) {
         let callParameters = ["summonerId": summonerName, "region": region, "season": season]
-        functions.httpsCallable("getMostFrequentChampions").call(callParameters) { (result: HTTPSCallableResult?, error: Error?) in
+        functions.httpsCallable("getMostFrequentChampionsBySummonerId").call(callParameters) { (result: HTTPSCallableResult?, error: Error?) in
             if let error = error as NSError? {
                 print(error.localizedDescription)
                 fail(MainModel.Fetch.Response(message: error.localizedDescription, isError: true, data: [] ))
@@ -29,11 +29,11 @@ class MainWorker {
             }
             
             let data = result?.data as! Array<Dictionary<String,AnyObject>>
-            let championArray: Array<ChampionsStatisticsModel> = []
+            var championArray: Array<ChampionsStatisticsModel> = []
             
-//            for dictionary in data {
-//                championArray.append(ChampionsStatisticsModel(dictionary))
-//            }
+            for dictionary in data {
+                championArray.append(ChampionsStatisticsModel(dictionary: dictionary))
+            }
             
             success(MainModel.Fetch.Response(message:nil, isError: false, data: championArray))
         }
