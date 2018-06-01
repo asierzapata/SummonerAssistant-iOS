@@ -80,17 +80,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
-        print(viewModel.topUsedChampions)
-        for n in 1...3 {
+        for n in 0...2 {
             let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl)
             let data = try? Data(contentsOf: url!)
+            
             UsedChampionsImages[n].image = UIImage(data: data!)
             roundImageView(image: UsedChampionsImages[n])
         }
     }
     
     func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView) {
-        print(viewModel.info)
         let url = URL(string: viewModel.info.profileIconThumbnail)
         let data = try? Data(contentsOf: url!)
         
@@ -99,6 +98,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         SummonerAvatar.image = UIImage(data: data!)
         roundImageView(image: SummonerAvatar)
     }
+    
+    // MARK: - Helpers
     
     func roundImageView(image: UIImageView){
         image.layer.cornerRadius = image.frame.size.width / 2;
@@ -131,7 +132,4 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 150
     }
     
-//    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//    }
 }
