@@ -22,9 +22,9 @@ struct ChampionsStatisticsModel: Codable{
     var tripleKill: String
     var quadraKill: String
     var pentaKill: String
-    var kill: Int
-    var death: Int
-    var assist: Int
+    var kill: Double
+    var death: Double
+    var assist: Double
     var winrate: String
     var gamesPlayed: String
     var gamesWon: String
@@ -44,9 +44,9 @@ struct ChampionsStatisticsModel: Codable{
         self.quadraKill = dictionary["quadraKill"] as! String
         self.pentaKill = dictionary["pentaKill"] as! String
         let KDA = dictionary["KDA"] as! Dictionary<String,AnyObject>
-        self.kill = KDA["kill"] as! Int
-        self.death = KDA["death"] as! Int
-        self.assist = KDA["assist"] as! Int
+        self.kill = KDA["kill"] as! Double
+        self.death = KDA["death"] as! Double
+        self.assist = KDA["assist"] as! Double
         let games = dictionary["games"] as! Dictionary<String,AnyObject>
         self.winrate = games["winrate"] as! String
         self.gamesPlayed = games["played"] as! String

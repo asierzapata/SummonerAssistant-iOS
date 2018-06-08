@@ -22,8 +22,13 @@
 		59998D9620B46226001CE878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9420B46226001CE878 /* Main.storyboard */; };
 		59998D9820B46227001CE878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9720B46227001CE878 /* Assets.xcassets */; };
 		59998D9B20B46227001CE878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9920B46227001CE878 /* LaunchScreen.storyboard */; };
+		59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */; };
+		59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */; };
+		59A98A2320CB129600CA5969 /* MultiplierContrainExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */; };
 		59F693BF20BF1195008EF837 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693BE20BF1195008EF837 /* RoundUIView.swift */; };
 		59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */; };
+		59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693CB20C05CB9008EF837 /* MFCRouter.swift */; };
+		59F693CE20C05CC9008EF837 /* MFCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693CD20C05CC9008EF837 /* MFCController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +59,13 @@
 		59998D9A20B46227001CE878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59998D9C20B46227001CE878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59998DD720B52AEF001CE878 /* SummonerAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummonerAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsTableViewCell.swift; sourceTree = "<group>"; };
+		59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplierContrainExtension.swift; sourceTree = "<group>"; };
 		59F693BE20BF1195008EF837 /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		59F693CB20C05CB9008EF837 /* MFCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFCRouter.swift; sourceTree = "<group>"; };
+		59F693CD20C05CC9008EF837 /* MFCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFCController.swift; sourceTree = "<group>"; };
 		8BE1457A6BDD56730BDF05AB /* Pods-SummonerAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		B21D2741BD88CFF4CE0D1C4A /* Pods_SummonerAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummonerAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5349624BBF9C5ACC1C67892 /* Pods-SummonerAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerAssistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummonerAssistant/Pods-SummonerAssistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +110,7 @@
 		5975F0EF20BDA9450074A368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				59F693C220C05BEA008EF837 /* MostFrequentChampions */,
 				59998E1720B5F191001CE878 /* Main */,
 			);
 			path = Screens;
@@ -168,8 +179,20 @@
 			children = (
 				59F693BE20BF1195008EF837 /* RoundUIView.swift */,
 				59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */,
+				59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */,
+				59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */,
+				59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */,
 			);
 			path = "View Designs";
+			sourceTree = "<group>";
+		};
+		59F693C220C05BEA008EF837 /* MostFrequentChampions */ = {
+			isa = PBXGroup;
+			children = (
+				59F693CB20C05CB9008EF837 /* MFCRouter.swift */,
+				59F693CD20C05CC9008EF837 /* MFCController.swift */,
+			);
+			path = MostFrequentChampions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,14 +346,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F693CE20C05CC9008EF837 /* MFCController.swift in Sources */,
 				5975F10220BDAF630074A368 /* ChampionStatisticsModel.swift in Sources */,
 				5975F0FD20BDAA9E0074A368 /* MainController.swift in Sources */,
 				5971133D20BEDE3800292C48 /* SummonerInfo.swift in Sources */,
 				5975F0F720BDAA770074A368 /* MainPresenter.swift in Sources */,
 				5975F0FB20BDAA8E0074A368 /* MainRouter.swift in Sources */,
+				59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */,
+				59A98A2320CB129600CA5969 /* MultiplierContrainExtension.swift in Sources */,
 				5975F0F520BDAA460074A368 /* MainModels.swift in Sources */,
+				59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */,
 				59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */,
 				59998D9120B46226001CE878 /* AppDelegate.swift in Sources */,
+				59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */,
 				5975F0F920BDAA820074A368 /* MainWorker.swift in Sources */,
 				5971133F20BEE84600292C48 /* AppError.swift in Sources */,
 				59F693BF20BF1195008EF837 /* RoundUIView.swift in Sources */,

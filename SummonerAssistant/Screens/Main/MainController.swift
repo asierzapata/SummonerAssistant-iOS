@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var router: MainRouter!
     
     var matchList = ["win", "lost"]
+    var mostFrequentChampionsArray: Array<ChampionsStatisticsModel> = []
     
     // Labels
     @IBOutlet weak var SummonerNameLabel: UILabel!
@@ -81,11 +82,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
         print(viewModel.topUsedChampions)
+        mostFrequentChampionsArray = viewModel.topUsedChampions
         for n in 1...3 {
             let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl)
             let data = try? Data(contentsOf: url!)
             UsedChampionsImages[n].image = UIImage(data: data!)
-            roundImageView(image: UsedChampionsImages[n])
         }
     }
     
@@ -97,13 +98,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         SummonerNameLabel.text = viewModel.info.name
         SummonerLevelLabel.text = String(viewModel.info.summonerLevel)
         SummonerAvatar.image = UIImage(data: data!)
-        roundImageView(image: SummonerAvatar)
+        //roundImageView(image: SummonerAvatar)
     }
     
-    func roundImageView(image: UIImageView){
-        image.layer.cornerRadius = image.frame.size.width / 2;
-        image.clipsToBounds = true;
-    }
+//    func roundImageView(image: UIImageView){
+//        image.layer.cornerRadius = image.frame.size.width / 2;
+//        image.clipsToBounds = true;
+//    }
     
     func errorFetchingItems(error: AppError) {
         print(error.message)
@@ -130,8 +131,5 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-//    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//    }
+
 }

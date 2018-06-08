@@ -23,7 +23,12 @@ class MainRouter: MainRouterInput {
     
     func passDataToNextScreen(segue: UIStoryboardSegue) {
         if segue.identifier == "matchDetail" {
-
+            
+        }
+        if segue.identifier == "mostFrequentChampions" {
+            let destinationVC = segue.destination as! MFCViewController
+            let sourceVC = segue.source as! MainViewController
+            destinationVC.data = sourceVC.mostFrequentChampionsArray
         }
     }
 }
