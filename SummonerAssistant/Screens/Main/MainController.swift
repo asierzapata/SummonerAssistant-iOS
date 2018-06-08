@@ -81,17 +81,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
-        print(viewModel.topUsedChampions)
         mostFrequentChampionsArray = viewModel.topUsedChampions
-        for n in 1...3 {
+        for n in 0...2 {
             let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl)
             let data = try? Data(contentsOf: url!)
+            
             UsedChampionsImages[n].image = UIImage(data: data!)
         }
     }
     
     func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView) {
-        print(viewModel.info)
         let url = URL(string: viewModel.info.profileIconThumbnail)
         let data = try? Data(contentsOf: url!)
         
@@ -131,5 +130,5 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-
+    
 }

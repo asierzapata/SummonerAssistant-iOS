@@ -56,13 +56,13 @@ class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Custom Cell data setting here
         
         // Vars
-        let averageKDA = (championStats.kill + championStats.assist) / championStats.death
-        let wins = CGFloat(Double(championStats.gamesWon)!)
-        let loses = CGFloat(Double(championStats.gamesLost)!)
+        let averageKDA = (championStats.kills + championStats.assists) / championStats.deaths
+        let wins = CGFloat(Double(championStats.gamesWon))
+        let loses = CGFloat(Double(championStats.gamesLost))
         cell.ChampionName.text = championStats.name
-        cell.WinRate.text = championStats.winrate
+        cell.WinRate.text = "\(championStats.winrate)%"
         cell.WinRateBarRatio.setMultiplier(multiplier: wins/loses)
-        cell.KDARaw.text = "\(championStats.kill)/\(championStats.death)/\(championStats.assist)"
+        cell.KDARaw.text = "\(championStats.kills)/\(championStats.deaths)/\(championStats.assists)"
         cell.KDAAvg.text = "\(Double(round(1000*averageKDA)/1000)):1"
         return cell
     }
