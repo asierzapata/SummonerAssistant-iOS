@@ -33,6 +33,10 @@ class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         setup()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router.passDataToNextScreen(segue: segue)
+    }
+    
     private func setup() {
         let viewController = self
         let router = MFCRouter()
@@ -53,26 +57,35 @@ class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let championStats = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionCell", for: indexPath) as! ChampionStatsTableViewCell
-        // Custom Cell data setting here
         
         // Vars
         let averageKDA = (championStats.kills + championStats.assists) / championStats.deaths
         let wins = Double(championStats.gamesWon)
         let loses = Double(championStats.gamesLost)
         let ratio = wins / (wins + loses)
+        
         cell.ChampionName.text = championStats.name
         cell.WinRate.text = "\(championStats.winrate)%"
-        print(CGFloat(Double(cell.WinRateBar.frame.size.width) * ratio),cell.WinRateBar.frame.size.width)
         cell.WinBarWidth.constant = CGFloat(Double(cell.WinRateBar.frame.size.width) * ratio)
         cell.KDARaw.text = "\(championStats.kills)/\(championStats.deaths)/\(championStats.assists)"
         cell.KDAAvg.text = "\(Double(round(1000*averageKDA)/1000)):1"
         ImageService.getImage(withURL: URL(string: championStats.thumbnailUrl)!) { image in
             cell.ChampionAvatar.image = image
         }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    // MARK: - Gesture handler
+    
+    @IBAction func swipeToMain(_ sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            router.showMain()
+        }
+    }
+    
 }

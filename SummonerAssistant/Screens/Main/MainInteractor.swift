@@ -18,12 +18,18 @@ class MainInteractor: MainInteractorInput {
     var presenter: MainPresenterInput!
     var worker: MainWorker!
     
+    var mostFrequentChampionsArray: Array<ChampionsStatisticsModel> = []
+    
     func fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions) {
-        worker.fetchMostFrequentChampions(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
-            self.presenter.presentFetchMostUsedChampions(response: data)
-        }) { (data) in
-            // It seems redundant. Check architecture
-            self.presenter.presentFetchMostUsedChampions(response: data)
+        if mostFrequentChampionsArray.count != 0 {
+            self.presenter.presentFetchMostUsedChampions(response: MainModel.Fetch.Response(message: "", isError: false, data: mostFrequentChampionsArray))
+        } else {
+            worker.fetchMostFrequentChampions(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
+                self.presenter.presentFetchMostUsedChampions(response: data)
+            }) { (data) in
+                // It seems redundant. Check architecture
+                self.presenter.presentFetchMostUsedChampions(response: data)
+            }
         }
     }
     

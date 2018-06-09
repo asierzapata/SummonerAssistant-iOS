@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "550230079.372016"
+            timestampString = "550236992.862308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Screens/Main/MainWorker.swift"
-            timestampString = "550230079.372341"
+            timestampString = "550236992.862602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -121,24 +121,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230079.372481"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "setup()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Screens/Main/MainRouter.swift"
-            timestampString = "550230079.373538"
+            timestampString = "550236992.862659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -153,40 +137,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230079.373847"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230079.374245"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Models/ChampionStatisticsModel.swift"
-            timestampString = "550230079.374543"
+            timestampString = "550236992.862864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -202,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SummonerAssistant/Models/ChampionStatisticsModel.swift"
-            timestampString = "550230079.374756"
+            timestampString = "550236992.863058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -214,79 +166,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230079.374807"
+            filePath = "SummonerAssistant/Screens/Main/MainInteractor.swift"
+            timestampString = "550236992.863107"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "fetchTopChampionsSummoner(request:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230153.012259"
+            filePath = "SummonerAssistant/Screens/Main/MainInteractor.swift"
+            timestampString = "550237020.775382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-            timestampString = "550230156.770541"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetchSummonerInfo(request:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SummonerAssistant.MFCViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  symbolName = "SummonerAssistant.MainInteractor.fetchSummonerInfo(request: SummonerAssistant.MainModel.Fetch.Request.SummonerInfo) -&gt; ()"
                   moduleName = "SummonerAssistant"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-                  timestampString = "550230156.7771159"
+                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/Main/MainInteractor.swift"
+                  timestampString = "550237020.8865761"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "7613">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.UIImage&gt;) -&gt; () in SummonerAssistant.MFCViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  symbolName = "closure #1 (SummonerAssistant.SummonerInfo) -&gt; () in SummonerAssistant.MainInteractor.fetchSummonerInfo(request: SummonerAssistant.MainModel.Fetch.Request.SummonerInfo) -&gt; ()"
                   moduleName = "SummonerAssistant"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/MostFrequentChampions/MFCController.swift"
-                  timestampString = "550230156.779367"
+                  urlString = "file:///Users/asierzapata/Documents/Projects/SummonerAssistant/SummonerAssistant/Screens/Main/MainInteractor.swift"
+                  timestampString = "550237020.888929"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "29">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "26">
                </Location>
             </Locations>
          </BreakpointContent>

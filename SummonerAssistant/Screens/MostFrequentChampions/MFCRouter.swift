@@ -28,7 +28,7 @@ class MFCRouter: MFCRouterInput {
         if segue.identifier == "main" {
             let destinationVC = segue.destination as! MainViewController
             let sourceVC = segue.source as! MFCViewController
-            destinationVC.mostFrequentChampionsArray = sourceVC.data
+            destinationVC.interactor.mostFrequentChampionsArray = sourceVC.data
         }
         if segue.identifier == "championStatsDetail" {
 //            let destinationVC = segue.destination as! MFCViewController
