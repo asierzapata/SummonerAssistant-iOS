@@ -13,9 +13,11 @@ class ChampionStatsTableViewCell: UITableViewCell {
     @IBOutlet weak var ChampionAvatar: RoundedImageView!
     @IBOutlet weak var ChampionName: UILabel!
     @IBOutlet weak var WinRate: UILabel!
-    @IBOutlet weak var WinRateBarRatio: NSLayoutConstraint!
     @IBOutlet weak var KDARaw: UILabel!
     @IBOutlet weak var KDAAvg: UILabel!
+    @IBOutlet weak var WinRateBar: RoundUIView!
+    @IBOutlet weak var WinBarWidth: NSLayoutConstraint!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

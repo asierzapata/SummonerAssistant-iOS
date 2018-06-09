@@ -25,6 +25,8 @@
 		59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */; };
 		59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */; };
 		59A98A2320CB129600CA5969 /* MultiplierContrainExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */; };
+		59A98A2620CBC94800CA5969 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2520CBC94800CA5969 /* ImageService.swift */; };
+		59A98A2820CBCEAD00CA5969 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2720CBCEAD00CA5969 /* UserService.swift */; };
 		59F693BF20BF1195008EF837 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693BE20BF1195008EF837 /* RoundUIView.swift */; };
 		59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */; };
 		59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693CB20C05CB9008EF837 /* MFCRouter.swift */; };
@@ -62,6 +64,8 @@
 		59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsTableViewCell.swift; sourceTree = "<group>"; };
 		59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplierContrainExtension.swift; sourceTree = "<group>"; };
+		59A98A2520CBC94800CA5969 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		59A98A2720CBCEAD00CA5969 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		59F693BE20BF1195008EF837 /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		59F693CB20C05CB9008EF837 /* MFCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFCRouter.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		59998D8F20B46226001CE878 /* SummonerAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				59A98A2420CBC8B100CA5969 /* Services */,
 				59F693BD20BF114B008EF837 /* View Designs */,
 				5975F10020BDAF520074A368 /* Models */,
 				5975F0EF20BDA9450074A368 /* Screens */,
@@ -172,6 +177,15 @@
 				5975F0FC20BDAA9E0074A368 /* MainController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		59A98A2420CBC8B100CA5969 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				59A98A2520CBC94800CA5969 /* ImageService.swift */,
+				59A98A2720CBCEAD00CA5969 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		59F693BD20BF114B008EF837 /* View Designs */ = {
@@ -357,7 +371,9 @@
 				5975F0F520BDAA460074A368 /* MainModels.swift in Sources */,
 				59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */,
 				59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */,
+				59A98A2620CBC94800CA5969 /* ImageService.swift in Sources */,
 				59998D9120B46226001CE878 /* AppDelegate.swift in Sources */,
+				59A98A2820CBCEAD00CA5969 /* UserService.swift in Sources */,
 				59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */,
 				5975F0F920BDAA820074A368 /* MainWorker.swift in Sources */,
 				5971133F20BEE84600292C48 /* AppError.swift in Sources */,

@@ -57,13 +57,18 @@ class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         // Vars
         let averageKDA = (championStats.kills + championStats.assists) / championStats.deaths
-        let wins = CGFloat(Double(championStats.gamesWon))
-        let loses = CGFloat(Double(championStats.gamesLost))
+        let wins = Double(championStats.gamesWon)
+        let loses = Double(championStats.gamesLost)
+        let ratio = wins / (wins + loses)
         cell.ChampionName.text = championStats.name
         cell.WinRate.text = "\(championStats.winrate)%"
-        cell.WinRateBarRatio.setMultiplier(multiplier: wins/loses)
+        print(CGFloat(Double(cell.WinRateBar.frame.size.width) * ratio),cell.WinRateBar.frame.size.width)
+        cell.WinBarWidth.constant = CGFloat(Double(cell.WinRateBar.frame.size.width) * ratio)
         cell.KDARaw.text = "\(championStats.kills)/\(championStats.deaths)/\(championStats.assists)"
         cell.KDAAvg.text = "\(Double(round(1000*averageKDA)/1000)):1"
+        ImageService.getImage(withURL: URL(string: championStats.thumbnailUrl)!) { image in
+            cell.ChampionAvatar.image = image
+        }
         return cell
     }
     

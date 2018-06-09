@@ -33,7 +33,8 @@ struct ChampionsStatisticsModel: Codable{
     
     init(dictionary: [String: Any]) {
         self.name = dictionary["name"] as! String
-        let thumbnail = (dictionary["thumbnailUrl"] as! String).components(separatedBy: "://")
+        let sanitizedURL = (dictionary["thumbnailUrl"] as! String).components(separatedBy: "\'")
+        let thumbnail = sanitizedURL.joined(separator: "").components(separatedBy: "://")
         self.thumbnailUrl = "https://\(thumbnail[1])"
         self.cs = dictionary["cs"] as! Int
         self.gold = dictionary["gold"] as! Int

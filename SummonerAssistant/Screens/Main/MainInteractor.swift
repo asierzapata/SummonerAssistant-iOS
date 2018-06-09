@@ -28,12 +28,18 @@ class MainInteractor: MainInteractorInput {
     }
     
     func fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo) {
-        worker.fetchSummonerInfo(summonerName: request.summonerName, region: request.region, success: { (data) in
-            self.presenter.presentFetchSummonerInfo(response: data)
-        }) { (data) in
-            // It seems redundant. Check architecture
-            self.presenter.presentFetchSummonerInfo(response: data)
+        
+        UserService.getUserInfo(summonerName: request.summonerName, resolve: { summoner in
+            self.presenter.presentFetchSummonerInfo(response: MainModel.Fetch.Response(message: "", isError: false, data: summoner))
+        }) { () in
+            self.worker.fetchSummonerInfo(summonerName: request.summonerName, region: request.region, success: { (data) in
+                self.presenter.presentFetchSummonerInfo(response: data)
+            }) { (data) in
+                // It seems redundant. Check architecture
+                self.presenter.presentFetchSummonerInfo(response: data)
+            }
         }
+       
     }
     
 }

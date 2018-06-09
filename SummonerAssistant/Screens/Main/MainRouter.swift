@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainRouterInput {
     func showMatchDetail()
+    func showMostFrequentChampions()
 }
 
 class MainRouter: MainRouterInput {
@@ -19,6 +20,10 @@ class MainRouter: MainRouterInput {
     func showMatchDetail() {
         // Here we will perfom a segue
         viewController.performSegue(withIdentifier: "matchDetail", sender: nil)
+    }
+    
+    func showMostFrequentChampions() {
+        viewController.performSegue(withIdentifier: "mostFrequentChampions", sender: nil)
     }
     
     func passDataToNextScreen(segue: UIStoryboardSegue) {

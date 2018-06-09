@@ -83,27 +83,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
         mostFrequentChampionsArray = viewModel.topUsedChampions
         for n in 0...2 {
-            let url = URL(string: viewModel.topUsedChampions[n].thumbnailUrl)
-            let data = try? Data(contentsOf: url!)
-            
-            UsedChampionsImages[n].image = UIImage(data: data!)
+            ImageService.getImage(withURL: URL(string: viewModel.topUsedChampions[n].thumbnailUrl)!) { image in
+                self.UsedChampionsImages[n].image = image
+            }
         }
     }
     
     func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView) {
-        let url = URL(string: viewModel.info.profileIconThumbnail)
-        let data = try? Data(contentsOf: url!)
         
         SummonerNameLabel.text = viewModel.info.name
         SummonerLevelLabel.text = String(viewModel.info.summonerLevel)
-        SummonerAvatar.image = UIImage(data: data!)
-        //roundImageView(image: SummonerAvatar)
+        ImageService.getImage(withURL: URL(string: viewModel.info.profileIconThumbnail)!) { image in
+            self.SummonerAvatar.image = image
+        }
+
     }
-    
-//    func roundImageView(image: UIImageView){
-//        image.layer.cornerRadius = image.frame.size.width / 2;
-//        image.clipsToBounds = true;
-//    }
     
     func errorFetchingItems(error: AppError) {
         print(error.message)
@@ -131,4 +125,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 150
     }
     
+    // MARK: - Tap gesture handler
+    
+    @IBAction func topChampionsTapped(_ sender: UITapGestureRecognizer) {
+        print(">>>>> Tapped")
+        router.showMostFrequentChampions()
+    }
 }

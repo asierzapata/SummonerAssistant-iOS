@@ -77,6 +77,10 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2156862745" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="L4W-k2-TmL" appends="YES" id="b2F-bj-7aY"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.40784313725490196" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,13 +280,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="L4W-k2-TmL">
+                    <connections>
+                        <action selector="topChampionsTapped:" destination="BYZ-38-t0r" id="7Ju-29-glF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="31.934032983508249"/>
         </scene>
-        <!--Controller-->
+        <!--Most Frequent Champion Stats-->
         <scene sceneID="nqW-Mj-txy">
             <objects>
-                <viewController id="fbB-FV-LbG" customClass="MFCController" customModule="SummonerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Most Frequent Champion Stats" id="fbB-FV-LbG" customClass="MFCViewController" customModule="SummonerAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oCv-EL-I35">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,6 +373,9 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="433-ng-iDG" userLabel="Win">
                                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="29.5"/>
                                                                             <color key="backgroundColor" red="0.32156862745098036" green="0.58431372549019611" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="90" id="YnH-4C-ZdP"/>
+                                                                            </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccF-0u-DP2" userLabel="Lost">
                                                                             <rect key="frame" x="90" y="0.0" width="15" height="29.5"/>
@@ -377,7 +389,6 @@
                                                                         <constraint firstItem="ccF-0u-DP2" firstAttribute="top" secondItem="Tlb-Jy-Cja" secondAttribute="top" id="HFr-hI-dOd"/>
                                                                         <constraint firstItem="433-ng-iDG" firstAttribute="top" secondItem="Tlb-Jy-Cja" secondAttribute="top" id="OJb-bS-j7g"/>
                                                                         <constraint firstItem="433-ng-iDG" firstAttribute="leading" secondItem="Tlb-Jy-Cja" secondAttribute="leading" id="arN-VV-bIP"/>
-                                                                        <constraint firstAttribute="width" secondItem="ccF-0u-DP2" secondAttribute="width" multiplier="7:1" id="axh-dc-Yki"/>
                                                                         <constraint firstItem="ccF-0u-DP2" firstAttribute="height" secondItem="433-ng-iDG" secondAttribute="height" id="j05-tF-QJ9"/>
                                                                         <constraint firstAttribute="bottom" secondItem="433-ng-iDG" secondAttribute="bottom" id="kdu-z7-p0A"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ccF-0u-DP2" secondAttribute="trailing" id="rD0-wv-v08"/>
@@ -502,11 +513,16 @@
                                             <outlet property="ChampionName" destination="pXw-oc-BnL" id="tLa-LR-Fib"/>
                                             <outlet property="KDAAvg" destination="7U3-Ly-oW4" id="OOP-Dg-Zkd"/>
                                             <outlet property="KDARaw" destination="Kvz-cQ-GEb" id="kdc-Kd-PXP"/>
+                                            <outlet property="WinBarWidth" destination="YnH-4C-ZdP" id="ZA8-ON-ZTO"/>
                                             <outlet property="WinRate" destination="w90-2m-KAU" id="xZ7-dE-wB5"/>
-                                            <outlet property="WinRateBarRatio" destination="axh-dc-Yki" id="vY4-gs-OTh"/>
+                                            <outlet property="WinRateBar" destination="Tlb-Jy-Cja" id="pIu-tm-FhV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fbB-FV-LbG" id="jzu-da-B09"/>
+                                    <outlet property="delegate" destination="fbB-FV-LbG" id="Tty-dD-9OI"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.54901960780000003" green="0.81568627449999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,10 +554,10 @@
             </objects>
             <point key="canvasLocation" x="31" y="-829"/>
         </scene>
-        <!--View Controller-->
+        <!--Champion Stats Detail-->
         <scene sceneID="Swh-fE-Kn2">
             <objects>
-                <viewController id="JFD-Kg-2gi" sceneMemberID="viewController">
+                <viewController title="Champion Stats Detail" id="JFD-Kg-2gi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nbe-ka-1S6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
