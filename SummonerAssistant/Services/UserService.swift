@@ -12,16 +12,16 @@ class UserService {
     
     static let userDefaults = UserDefaults.standard
 
-    static func getUserInfo(summonerName: String, resolve: @escaping (_ summoner: SummonerInfo) -> (), reject: @escaping () -> ()) {
-        if let summoner = userDefaults.value(forKey: summonerName) {
-            resolve(summoner as! SummonerInfo)
+    static func getSummonerName(resolve: @escaping (_ summoner: String) -> (), reject: @escaping () -> ()) {
+        if let summoner = userDefaults.value(forKey: "summonerName") {
+            resolve(summoner as! String)
         } else {
             reject()
         }
     }
     
-    static func updateUser(summoner: SummonerInfo) {
-        userDefaults.set(summoner, forKey: summoner.name)
+    static func updateSummonerName(summoner: String) {
+        userDefaults.set(summoner, forKey: "summonerName")
     }
     
 }

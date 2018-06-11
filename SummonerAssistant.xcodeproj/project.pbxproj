@@ -24,9 +24,14 @@
 		59998D9B20B46227001CE878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59998D9920B46227001CE878 /* LaunchScreen.storyboard */; };
 		59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */; };
 		59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */; };
-		59A98A2320CB129600CA5969 /* MultiplierContrainExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */; };
 		59A98A2620CBC94800CA5969 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2520CBC94800CA5969 /* ImageService.swift */; };
 		59A98A2820CBCEAD00CA5969 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2720CBCEAD00CA5969 /* UserService.swift */; };
+		59A98A2A20CC205700CA5969 /* AppStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2920CC205700CA5969 /* AppStateController.swift */; };
+		59A98A2C20CC20D000CA5969 /* MatchInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A2B20CC20D000CA5969 /* MatchInfoModel.swift */; };
+		59A98A3120CC446400CA5969 /* ChampionStatsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A3020CC446400CA5969 /* ChampionStatsDetailController.swift */; };
+		59A98A3320CC446D00CA5969 /* ChampionStatsDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A3220CC446D00CA5969 /* ChampionStatsDetailRouter.swift */; };
+		59A98A3620CC49BD00CA5969 /* SummonerNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A3520CC49BD00CA5969 /* SummonerNameController.swift */; };
+		59A98A3820CC49CD00CA5969 /* SummonerNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A98A3720CC49CD00CA5969 /* SummonerNameRouter.swift */; };
 		59F693BF20BF1195008EF837 /* RoundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693BE20BF1195008EF837 /* RoundUIView.swift */; };
 		59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */; };
 		59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F693CB20C05CB9008EF837 /* MFCRouter.swift */; };
@@ -63,9 +68,14 @@
 		59998DD720B52AEF001CE878 /* SummonerAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummonerAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsTableViewCell.swift; sourceTree = "<group>"; };
-		59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplierContrainExtension.swift; sourceTree = "<group>"; };
 		59A98A2520CBC94800CA5969 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		59A98A2720CBCEAD00CA5969 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		59A98A2920CC205700CA5969 /* AppStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateController.swift; sourceTree = "<group>"; };
+		59A98A2B20CC20D000CA5969 /* MatchInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoModel.swift; sourceTree = "<group>"; };
+		59A98A3020CC446400CA5969 /* ChampionStatsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsDetailController.swift; sourceTree = "<group>"; };
+		59A98A3220CC446D00CA5969 /* ChampionStatsDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsDetailRouter.swift; sourceTree = "<group>"; };
+		59A98A3520CC49BD00CA5969 /* SummonerNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerNameController.swift; sourceTree = "<group>"; };
+		59A98A3720CC49CD00CA5969 /* SummonerNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerNameRouter.swift; sourceTree = "<group>"; };
 		59F693BE20BF1195008EF837 /* RoundUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundUIView.swift; sourceTree = "<group>"; };
 		59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		59F693CB20C05CB9008EF837 /* MFCRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFCRouter.swift; sourceTree = "<group>"; };
@@ -114,6 +124,8 @@
 		5975F0EF20BDA9450074A368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				59A98A3420CC498900CA5969 /* SummonerName */,
+				59A98A2D20CC442D00CA5969 /* ChampionStatsDetail */,
 				59F693C220C05BEA008EF837 /* MostFrequentChampions */,
 				59998E1720B5F191001CE878 /* Main */,
 			);
@@ -126,6 +138,7 @@
 				5975F10120BDAF630074A368 /* ChampionStatisticsModel.swift */,
 				5971133C20BEDE3800292C48 /* SummonerInfo.swift */,
 				5971133E20BEE84600292C48 /* AppError.swift */,
+				59A98A2B20CC20D000CA5969 /* MatchInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 				59998D9920B46227001CE878 /* LaunchScreen.storyboard */,
 				59998D9C20B46227001CE878 /* Info.plist */,
 				5975F0FE20BDAD2D0074A368 /* GoogleService-Info.plist */,
+				59A98A2920CC205700CA5969 /* AppStateController.swift */,
 			);
 			path = SummonerAssistant;
 			sourceTree = "<group>";
@@ -188,6 +202,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		59A98A2D20CC442D00CA5969 /* ChampionStatsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				59A98A3020CC446400CA5969 /* ChampionStatsDetailController.swift */,
+				59A98A3220CC446D00CA5969 /* ChampionStatsDetailRouter.swift */,
+			);
+			path = ChampionStatsDetail;
+			sourceTree = "<group>";
+		};
+		59A98A3420CC498900CA5969 /* SummonerName */ = {
+			isa = PBXGroup;
+			children = (
+				59A98A3520CC49BD00CA5969 /* SummonerNameController.swift */,
+				59A98A3720CC49CD00CA5969 /* SummonerNameRouter.swift */,
+			);
+			path = SummonerName;
+			sourceTree = "<group>";
+		};
 		59F693BD20BF114B008EF837 /* View Designs */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +227,6 @@
 				59F693C020BF1A54008EF837 /* CustomTableViewCell.swift */,
 				59A98A1C20CB06F300CA5969 /* RoundedImageView.swift */,
 				59A98A2020CB0CD100CA5969 /* ChampionStatsTableViewCell.swift */,
-				59A98A2220CB129600CA5969 /* MultiplierContrainExtension.swift */,
 			);
 			path = "View Designs";
 			sourceTree = "<group>";
@@ -363,16 +394,21 @@
 				59F693CE20C05CC9008EF837 /* MFCController.swift in Sources */,
 				5975F10220BDAF630074A368 /* ChampionStatisticsModel.swift in Sources */,
 				5975F0FD20BDAA9E0074A368 /* MainController.swift in Sources */,
+				59A98A3820CC49CD00CA5969 /* SummonerNameRouter.swift in Sources */,
 				5971133D20BEDE3800292C48 /* SummonerInfo.swift in Sources */,
+				59A98A3320CC446D00CA5969 /* ChampionStatsDetailRouter.swift in Sources */,
+				59A98A2C20CC20D000CA5969 /* MatchInfoModel.swift in Sources */,
 				5975F0F720BDAA770074A368 /* MainPresenter.swift in Sources */,
+				59A98A3120CC446400CA5969 /* ChampionStatsDetailController.swift in Sources */,
+				59A98A2A20CC205700CA5969 /* AppStateController.swift in Sources */,
 				5975F0FB20BDAA8E0074A368 /* MainRouter.swift in Sources */,
 				59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */,
-				59A98A2320CB129600CA5969 /* MultiplierContrainExtension.swift in Sources */,
 				5975F0F520BDAA460074A368 /* MainModels.swift in Sources */,
 				59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */,
 				59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */,
 				59A98A2620CBC94800CA5969 /* ImageService.swift in Sources */,
 				59998D9120B46226001CE878 /* AppDelegate.swift in Sources */,
+				59A98A3620CC49BD00CA5969 /* SummonerNameController.swift in Sources */,
 				59A98A2820CBCEAD00CA5969 /* UserService.swift in Sources */,
 				59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */,
 				5975F0F920BDAA820074A368 /* MainWorker.swift in Sources */,

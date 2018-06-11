@@ -11,6 +11,7 @@ import UIKit
 protocol MainInteractorInput {
     func fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions)
     func fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo)
+    func fetchMatchList(request: MainModel.Fetch.Request.MatchInfoView)
 }
 
 class MainInteractor: MainInteractorInput {
@@ -18,34 +19,31 @@ class MainInteractor: MainInteractorInput {
     var presenter: MainPresenterInput!
     var worker: MainWorker!
     
-    var mostFrequentChampionsArray: Array<ChampionsStatisticsModel> = []
     
     func fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions) {
-        if mostFrequentChampionsArray.count != 0 {
-            self.presenter.presentFetchMostUsedChampions(response: MainModel.Fetch.Response(message: "", isError: false, data: mostFrequentChampionsArray))
-        } else {
-            worker.fetchMostFrequentChampions(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
-                self.presenter.presentFetchMostUsedChampions(response: data)
-            }) { (data) in
-                // It seems redundant. Check architecture
-                self.presenter.presentFetchMostUsedChampions(response: data)
-            }
+        worker.fetchMostFrequentChampions(summonerName: request.summonerName, region: request.region, season: request.season, success: { (data) in
+            self.presenter.presentFetchMostUsedChampions(response: data)
+        }) { (data) in
+            // It seems redundant. Check architecture
+            self.presenter.presentFetchMostUsedChampions(response: data)
         }
     }
     
     func fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo) {
-        
-        UserService.getUserInfo(summonerName: request.summonerName, resolve: { summoner in
-            self.presenter.presentFetchSummonerInfo(response: MainModel.Fetch.Response(message: "", isError: false, data: summoner))
-        }) { () in
-            self.worker.fetchSummonerInfo(summonerName: request.summonerName, region: request.region, success: { (data) in
-                self.presenter.presentFetchSummonerInfo(response: data)
-            }) { (data) in
-                // It seems redundant. Check architecture
-                self.presenter.presentFetchSummonerInfo(response: data)
-            }
+        worker.fetchSummonerInfo(summonerName: request.summonerName, region: request.region, success: { (data) in
+            self.presenter.presentFetchSummonerInfo(response: data)
+        }) { (data) in
+            // It seems redundant. Check architecture
+            self.presenter.presentFetchSummonerInfo(response: data)
         }
-       
+    }
+    
+    func fetchMatchList(request: MainModel.Fetch.Request.MatchInfoView) {
+        worker.fetchMatchHistory(summonerName: request.summonerName, region: request.region, type: request.type, start: request.start, success: { (data) in
+            self.presenter.presentFetchMatchList(response: data)
+        }) { (data) in
+            self.presenter.presentFetchMatchList(response: data)
+        }
     }
     
 }

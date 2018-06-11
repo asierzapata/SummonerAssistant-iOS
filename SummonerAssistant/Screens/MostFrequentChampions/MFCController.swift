@@ -13,8 +13,8 @@ protocol MFCControllerInput: class {
 }
 
 class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFCControllerInput {
-    var data: Array<ChampionsStatisticsModel> = []
     
+    var AppStateController: AppStateController!
     var router: MFCRouter!
     
     override func viewDidLoad(){
@@ -51,11 +51,11 @@ class MFCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return AppStateController.mostFrequentChampionsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let championStats = data[indexPath.row]
+        let championStats = AppStateController.mostFrequentChampionsArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionCell", for: indexPath) as! ChampionStatsTableViewCell
         
         // Vars

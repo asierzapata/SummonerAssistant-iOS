@@ -15,6 +15,7 @@ struct SummonerInfo {
     var profileIconId: Int
     var profileIconThumbnail: String
     var summonerLevel: Int
+    var region: String?
     init(dictionary: [String: Any]) {
         self.accountId = dictionary["accountId"] as! Int
         self.id = dictionary["id"] as! Int

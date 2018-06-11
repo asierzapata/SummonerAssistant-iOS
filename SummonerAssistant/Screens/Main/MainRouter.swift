@@ -33,7 +33,7 @@ class MainRouter: MainRouterInput {
         if segue.identifier == "mostFrequentChampions" {
             let destinationVC = segue.destination as! MFCViewController
             let sourceVC = segue.source as! MainViewController
-            destinationVC.data = sourceVC.mostFrequentChampionsArray
+            destinationVC.AppStateController = sourceVC.AppStateController
         }
     }
 }

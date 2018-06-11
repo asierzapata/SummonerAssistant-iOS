@@ -10,11 +10,6 @@ import Firebase
 
 typealias responseHandler = (_ response:MainModel.Fetch.Response) ->()
 
-enum MainFetchTypes {
-    case MostFrequentChampions
-    case SummonerInfo
-}
-
 class MainWorker {
     
     lazy var functions = Functions.functions()
@@ -50,9 +45,32 @@ class MainWorker {
 
             let data = result?.data as! Dictionary<String,AnyObject>
             
-            let summonerInfo: SummonerInfo = SummonerInfo(dictionary: data)
+            var summonerInfo: SummonerInfo = SummonerInfo(dictionary: data)
+            summonerInfo.region = region
 
             success(MainModel.Fetch.Response(message:nil, isError: false, data: summonerInfo))
+        }
+    }
+    
+    func fetchMatchHistory(summonerName: String!, region: String!, type: String!, start: String!, success:@escaping(responseHandler), fail:@escaping(responseHandler)){
+        let callParameters = ["summonerName": summonerName, "region": region, "type": type, "start": start ]
+        functions.httpsCallable("getMatchHistoryBySummonerName").call(callParameters) { (result: HTTPSCallableResult?, error: Error?) in
+            if let error = error as NSError? {
+                print(error.localizedDescription)
+                fail(MainModel.Fetch.Response(message: error.localizedDescription, isError: true, data: [] ))
+                return
+            }
+            
+            let dict = result?.data as! Dictionary<String,AnyObject>
+            let data = dict["games"] as! Array<Dictionary<String,AnyObject>>
+            print(data)
+            var matchList: Array<MatchInfoModel> = []
+            
+            for dictionary in data {
+                matchList.append(MatchInfoModel(dictionary: dictionary))
+            }
+            
+            success(MainModel.Fetch.Response(message:nil, isError: false, data: matchList))
         }
     }
 }

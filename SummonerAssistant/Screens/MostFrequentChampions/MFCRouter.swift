@@ -28,12 +28,12 @@ class MFCRouter: MFCRouterInput {
         if segue.identifier == "main" {
             let destinationVC = segue.destination as! MainViewController
             let sourceVC = segue.source as! MFCViewController
-            destinationVC.interactor.mostFrequentChampionsArray = sourceVC.data
+            destinationVC.AppStateController = sourceVC.AppStateController
         }
         if segue.identifier == "championStatsDetail" {
 //            let destinationVC = segue.destination as! MFCViewController
 //            let sourceVC = segue.source as! MainViewController
-//            destinationVC.data = sourceVC.mostFrequentChampionsArray
+//            destinationVC.AppStateController = sourceVC.AppStateController
         }
     }
 }

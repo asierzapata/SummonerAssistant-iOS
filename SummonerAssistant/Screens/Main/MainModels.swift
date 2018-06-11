@@ -22,6 +22,12 @@ struct MainModel{
                 var summonerName: String
                 var region: String
             }
+            struct MatchInfoView {
+                var region: String
+                var summonerName: String
+                var type: String
+                var start: String
+            }
         }
         struct Response{
             var message: String?
@@ -40,9 +46,9 @@ struct MainModel{
                 var message: String?
             }
             struct MatchInfoView {
-                var champion: String
-                var KDA: String
-                var cs: String
+                var matchList: Array<MatchInfoModel>
+                var isError: Bool
+                var message: String?
             }
         }
     }

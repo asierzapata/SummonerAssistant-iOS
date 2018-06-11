@@ -11,6 +11,7 @@ import UIKit
 protocol MainPresenterInput {
     func presentFetchMostUsedChampions(response: MainModel.Fetch.Response)
     func presentFetchSummonerInfo(response: MainModel.Fetch.Response)
+    func presentFetchMatchList(response: MainModel.Fetch.Response)
 }
 
 class MainPresenter: MainPresenterInput {
@@ -40,6 +41,20 @@ class MainPresenter: MainPresenterInput {
 
             if let viewController = self.viewController {
                 viewController.successSummonerInfo(viewModel: viewModel)
+            }
+        }
+    }
+    
+    func presentFetchMatchList(response: MainModel.Fetch.Response) {
+        if response.isError {
+            if let viewController = self.viewController {
+                viewController.errorFetchingItems(error: AppError(message: response.message!))
+            }
+        } else {
+            let viewModel = MainModel.Fetch.ViewModel.MatchInfoView(matchList: response.data as! Array<MatchInfoModel>, isError: response.isError, message: response.message)
+            
+            if let viewController = self.viewController {
+                viewController.successFetchMatchList(viewModel: viewModel)
             }
         }
     }
