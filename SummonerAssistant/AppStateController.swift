@@ -13,15 +13,4 @@ class AppStateController {
     var mostFrequentChampionsArray : Array<ChampionsStatisticsModel> = []
     var matchList : Array<MatchInfoModel> = []
     var season : String = "7"
-    
-    init(summoner: SummonerInfo, mostFrequentChampionsArray: Array<ChampionsStatisticsModel>, matchList : Array<MatchInfoModel>) {
-        self.summoner = summoner
-        self.mostFrequentChampionsArray = mostFrequentChampionsArray
-        self.matchList = matchList
-    }
-    
-    init() {
-        
-    }
-
 }

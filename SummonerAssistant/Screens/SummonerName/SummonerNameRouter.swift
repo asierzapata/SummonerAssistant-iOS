@@ -10,23 +10,20 @@ import Foundation
 import UIKit
 
 protocol SummonerNameRouterInput {
-    func showMain()
+    func showLoader()
 }
 
 class SummonerNameRouter: SummonerNameRouterInput {
     
     var viewController: SummonerNameController!
     
-    func showMain() {
-        viewController.performSegue(withIdentifier: "main", sender: nil)
+    func showLoader() {
+        viewController.performSegue(withIdentifier: "loader", sender: nil)
     }
     
     func passDataToNextScreen(segue: UIStoryboardSegue) {
-        if segue.identifier == "main" {
-            let destinationVC = segue.destination as! MainViewController
-            let sourceVC = segue.source as! SummonerNameController
-            destinationVC.summonerName = sourceVC.summonerName.text
-            destinationVC.AppStateController = AppStateController()
+        if segue.identifier == "loader" {
+
         }
     }
 }
