@@ -100,10 +100,42 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        //let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         let match = AppStateController.matchList[indexPath.row]
-        cell.KDA.text = "4/0/3";
-        //cell.MatchContainer.backgroundColor = (AppStateController.matchList[indexPath.row].result == "win" ? UIColor.green : UIColor.red)
+        cell.MatchContainer.backgroundColor = (match.isWin == 1 ? UIColor.green : UIColor.red)
+        
+        ImageService.getImage(withURL: URL(string: "https:\(match.championData.imageUrl)")!, resolve: { image in
+            cell.ChampionAvatar.image = image
+        })
+        
+        let firstSummoner = match.spells[0] as! Dictionary<String,String>
+        let secondSummoner = match.spells[1] as! Dictionary<String,String>
+        
+        ImageService.getImage(withURL: URL(string: "https:\(firstSummoner["imageUrl"]!)")!, resolve: { image in
+            cell.FirstSummoner.image = image
+        })
+        ImageService.getImage(withURL: URL(string: "https:\(secondSummoner["imageUrl"]!)")!, resolve: { image in
+            cell.SecondSummoner.image = image
+        })
+        ImageService.getImage(withURL: URL(string: "https:\(match.firstRune)")!, resolve: { image in
+            cell.MainRune.image = image
+        })
+        ImageService.getImage(withURL: URL(string: "https:\(match.secondRune)")!, resolve: { image in
+            cell.SecondRune.image = image
+        })
+
+        cell.ChampionLevel.text = "Level \(String(match.championData.level))"
+        
+        cell.MatchType.text = match.gameType
+        cell.TimeCreated.text = "\(String(match.timeCreated))"
+        cell.TotalTime.text = String(match.gameLength)
+        cell.KillStreak.text = match.gameStats.largestMultiKillString
+        
+        cell.MMR.text = "MMR \(String(match.mmr))"
+        cell.KDAString.text = "\(match.gameStats.kills)/\(match.gameStats.deaths)/\(match.gameStats.assists)"
+        cell.KDAAverage.text = match.gameStats.KDA.components(separatedBy: ":")[0]
+        cell.CS.text = "CS \(String(match.gameStats.cs))"
+        cell.KillParticipation.text = match.gameStats.killContribution
+        
         return cell
     }
     
