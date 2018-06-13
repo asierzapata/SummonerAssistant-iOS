@@ -10,8 +10,8 @@ import Foundation
 
 struct MatchInfoModel {
     
-    var gameId: Int
-    var summonerId: Int
+    var gameId: String
+    var summonerId: String
     var timeCreated: Int
     var gameType: String
     var mmr: Int
@@ -27,7 +27,7 @@ struct MatchInfoModel {
     struct stats {
         var killContribution: String
         var cs: Int
-        var csPerMin: Int
+        var csPerMin: NSNumber
         var deaths: Int
         var assists: Int
         var kills: Int
@@ -44,9 +44,9 @@ struct MatchInfoModel {
     }
     
     init(dictionary: [String: Any]) {
-        self.gameId = dictionary["gameId"] as! Int
-        self.summonerId = dictionary["summonerId"] as! Int
-        self.timeCreated = dictionary["timeCreated"] as! Int
+        self.gameId = dictionary["gameId"] as! String
+        self.summonerId = dictionary["summonerId"] as! String
+        self.timeCreated = dictionary["createDate"] as! Int
         self.gameType = dictionary["gameType"] as! String
         self.mmr = dictionary["mmr"] as! Int
         self.isRemake = dictionary["isRemake"] as! Int
@@ -59,7 +59,7 @@ struct MatchInfoModel {
         self.gameStats = stats(
             killContribution: general["contributionForKillRate"] as! String,
             cs: general["cs"] as! Int,
-            csPerMin: general["csPerMin"] as! Int,
+            csPerMin: general["csPerMin"] as! NSNumber,
             deaths: general["death"] as! Int,
             assists: general["assist"] as! Int,
             kills: general["kill"] as! Int,

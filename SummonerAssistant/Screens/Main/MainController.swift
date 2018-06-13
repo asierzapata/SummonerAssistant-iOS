@@ -8,17 +8,9 @@
 
 import UIKit
 
-protocol MainViewControllerInput: class {
-    func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions)
-    func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView)
-    func successFetchMatchList(viewModel: MainModel.Fetch.ViewModel.MatchInfoView)
-    func errorFetchingItems(error: AppError)
-}
-
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MainViewControllerInput {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var AppStateController: AppStateController!
-    var interactor: MainInteractor!
     var router: MainRouter!
     
     var summonerName: String!
@@ -53,17 +45,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func setup() {
         let viewController = self
-        let interactor = MainInteractor()
-        let worker = MainWorker()
-        let presenter = MainPresenter()
+
         let router = MainRouter()
-        viewController.interactor = interactor
         viewController.router = router
-        interactor.presenter = presenter
-        interactor.worker = worker
-        presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,57 +62,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             SecondUsedChampionImage,
             ThirdUsedChampionImage
         ]
-        if AppStateController.summoner.accountId == 0 {
-            interactor.fetchSummonerInfo(request: MainModel.Fetch.Request.SummonerInfo(summonerName: summonerName, region: "euw"))
-        } else {
-            let viewModel = MainModel.Fetch.ViewModel.SummonerInfoView(info: AppStateController.summoner, isError: false, message: "")
-            successSummonerInfo(viewModel: viewModel)
-        }
+        presentSummonerInfo()
+        presentMatchList()
+        presentMostUsedChampions()
     }
     
-    func fetchSummonerRelatedData() {
-        if AppStateController.mostFrequentChampionsArray.count == 0 {
-            interactor.fetchTopChampionsSummoner(request: MainModel.Fetch.Request.MostUsedChampions(summonerName: String(AppStateController.summoner.id) , region: AppStateController.summoner.region!, season: AppStateController.season))
-        } else {
-            let viewModel = MainModel.Fetch.ViewModel.MostUsedChampions(topUsedChampions: AppStateController.mostFrequentChampionsArray, isError: false, message: "")
-            successFetchMostUsedChampions(viewModel: viewModel)
-        }
-        
-        if AppStateController.matchList.count == 0 {
-            interactor.fetchMatchList(request: MainModel.Fetch.Request.MatchInfoView(region: AppStateController.summoner.region!, summonerName: AppStateController.summoner.name, type: "ranked", start: "0"))
-        } else {
-            let viewModel = MainModel.Fetch.ViewModel.MatchInfoView(matchList: AppStateController.matchList, isError: false, message: "")
-            successFetchMatchList(viewModel: viewModel)
-        }
-    }
-    
-    func successFetchMostUsedChampions(viewModel: MainModel.Fetch.ViewModel.MostUsedChampions) {
-        AppStateController.mostFrequentChampionsArray = viewModel.topUsedChampions
+    func presentMostUsedChampions() {
+        let topUsedChampions = AppStateController.mostFrequentChampionsArray
         for n in 0...2 {
-            ImageService.getImage(withURL: URL(string: viewModel.topUsedChampions[n].thumbnailUrl)!) { image in
+            ImageService.getImage(withURL: URL(string: topUsedChampions[n].thumbnailUrl)!) { image in
                 self.UsedChampionsImages[n].image = image
             }
         }
     }
     
-    func successFetchMatchList(viewModel: MainModel.Fetch.ViewModel.MatchInfoView) {
-        AppStateController.matchList = viewModel.matchList
+    func presentMatchList() {
     }
     
-    func successSummonerInfo(viewModel: MainModel.Fetch.ViewModel.SummonerInfoView) {
-        AppStateController.summoner = viewModel.info
-        
-        SummonerNameLabel.text = viewModel.info.name
-        SummonerLevelLabel.text = String(viewModel.info.summonerLevel)
-        ImageService.getImage(withURL: URL(string: viewModel.info.profileIconThumbnail)!) { image in
+    func presentSummonerInfo() {
+        let summoner = AppStateController.summoner
+        SummonerNameLabel.text = summoner.name
+        SummonerLevelLabel.text = String(summoner.summonerLevel)
+        ImageService.getImage(withURL: URL(string: summoner.profileIconThumbnail)!) { image in
             self.SummonerAvatar.image = image
         }
-        
-        fetchSummonerRelatedData()
-    }
-    
-    func errorFetchingItems(error: AppError) {
-        print(error.message)
     }
     
     // MARK: - UITableView Delegate Methods
