@@ -10,10 +10,6 @@
 		226EF8C83226B70FAEFBC1D2 /* Pods_SummonerAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21D2741BD88CFF4CE0D1C4A /* Pods_SummonerAssistant.framework */; };
 		5971133D20BEDE3800292C48 /* SummonerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971133C20BEDE3800292C48 /* SummonerInfo.swift */; };
 		5971133F20BEE84600292C48 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5971133E20BEE84600292C48 /* AppError.swift */; };
-		5975F0F320BDAA2D0074A368 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0F220BDAA2D0074A368 /* MainInteractor.swift */; };
-		5975F0F520BDAA460074A368 /* MainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0F420BDAA460074A368 /* MainModels.swift */; };
-		5975F0F720BDAA770074A368 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0F620BDAA770074A368 /* MainPresenter.swift */; };
-		5975F0F920BDAA820074A368 /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0F820BDAA820074A368 /* MainWorker.swift */; };
 		5975F0FB20BDAA8E0074A368 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0FA20BDAA8E0074A368 /* MainRouter.swift */; };
 		5975F0FD20BDAA9E0074A368 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975F0FC20BDAA9E0074A368 /* MainController.swift */; };
 		5975F0FF20BDAD2D0074A368 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5975F0FE20BDAD2D0074A368 /* GoogleService-Info.plist */; };
@@ -57,10 +53,6 @@
 /* Begin PBXFileReference section */
 		5971133C20BEDE3800292C48 /* SummonerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerInfo.swift; sourceTree = "<group>"; };
 		5971133E20BEE84600292C48 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		5975F0F220BDAA2D0074A368 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		5975F0F420BDAA460074A368 /* MainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModels.swift; sourceTree = "<group>"; };
-		5975F0F620BDAA770074A368 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		5975F0F820BDAA820074A368 /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		5975F0FA20BDAA8E0074A368 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		5975F0FC20BDAA9E0074A368 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		5975F0FE20BDAD2D0074A368 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -196,10 +188,6 @@
 		59998E1720B5F191001CE878 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5975F0F220BDAA2D0074A368 /* MainInteractor.swift */,
-				5975F0F420BDAA460074A368 /* MainModels.swift */,
-				5975F0F620BDAA770074A368 /* MainPresenter.swift */,
-				5975F0F820BDAA820074A368 /* MainWorker.swift */,
 				5975F0FA20BDAA8E0074A368 /* MainRouter.swift */,
 				5975F0FC20BDAA9E0074A368 /* MainController.swift */,
 			);
@@ -425,14 +413,12 @@
 				59A98A3D20D02EFF00CA5969 /* LoaderRouter.swift in Sources */,
 				59A98A3320CC446D00CA5969 /* ChampionStatsDetailRouter.swift in Sources */,
 				59A98A2C20CC20D000CA5969 /* MatchInfoModel.swift in Sources */,
-				5975F0F720BDAA770074A368 /* MainPresenter.swift in Sources */,
 				59A98A3120CC446400CA5969 /* ChampionStatsDetailController.swift in Sources */,
 				59A98A2A20CC205700CA5969 /* AppStateController.swift in Sources */,
 				59A98A4320D0301A00CA5969 /* LoaderPresenter.swift in Sources */,
 				5975F0FB20BDAA8E0074A368 /* MainRouter.swift in Sources */,
 				59F693CC20C05CB9008EF837 /* MFCRouter.swift in Sources */,
 				59A98A4120D02F4800CA5969 /* LoaderInteractor.swift in Sources */,
-				5975F0F520BDAA460074A368 /* MainModels.swift in Sources */,
 				59A98A2120CB0CD100CA5969 /* ChampionStatsTableViewCell.swift in Sources */,
 				59F693C120BF1A54008EF837 /* CustomTableViewCell.swift in Sources */,
 				59A98A4720D0304100CA5969 /* LoaderModels.swift in Sources */,
@@ -443,10 +429,8 @@
 				59A98A3620CC49BD00CA5969 /* SummonerNameController.swift in Sources */,
 				59A98A2820CBCEAD00CA5969 /* UserService.swift in Sources */,
 				59A98A1D20CB06F300CA5969 /* RoundedImageView.swift in Sources */,
-				5975F0F920BDAA820074A368 /* MainWorker.swift in Sources */,
 				5971133F20BEE84600292C48 /* AppError.swift in Sources */,
 				59F693BF20BF1195008EF837 /* RoundUIView.swift in Sources */,
-				5975F0F320BDAA2D0074A368 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,6 @@ protocol MainRouterInput {
 
 class MainRouter: MainRouterInput {
     weak var viewController: MainViewController!
-    var dataStore: MainInteractor?
     
     func showMatchDetail() {
         // Here we will perfom a segue
